@@ -8,36 +8,33 @@ import { AdaptableBlotterOptions } from '@adaptabletools/adaptableblotter-angula
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  columnDefs = [
-    { headerName: 'Make', field: 'make' },
-    { headerName: 'Model', field: 'model' },
-    { headerName: 'Price', field: 'price' }
-  ];
+  gridOptions: GridOptions = {
+    rowData: [
+      { make: 'Toyota', model: 'Celica', price: 35000 },
+      { make: 'Ford', model: 'Mondeo', price: 32000 },
+      { make: 'Porsche', model: 'Boxter', price: 72000 }
+    ],
+    columnDefs: [
+      { headerName: 'Make', field: 'make' },
+      { headerName: 'Model', field: 'model' },
+      { headerName: 'Price', field: 'price' }
+    ]
+  };
 
-  rowData = [
-    { make: 'Toyota', model: 'Celica', price: 35000 },
-    { make: 'Ford', model: 'Mondeo', price: 32000 },
-    { make: 'Porsche', model: 'Boxter', price: 72000 }
-  ];
-  adaptableBlotterOptions: AdaptableBlotterOptions;
+  adaptableBlotterOptions: AdaptableBlotterOptions = {
+    blotterId: '1234561',
+    primaryKey: 'make',
+
+    vendorGrid: this.gridOptions,
+
+    generalOptions: {
+      showMissingPrimaryKeyWarning: false
+    },
+    filterOptions: {
+      useAdaptableBlotterFilterForm: false
+    }
+  };
 
   constructor() {}
-  ready(x: GridOptions) {
-    this.adaptableBlotterOptions = {
-      blotterId: '123',
-      primaryKey: null,
-      // userName: 'demo user',
-      licenceKey: 'Trial',
-      vendorGrid: x,
-      containerOptions: {
-        adaptableBlotterContainer: 'adaptableBlotter'
-      },
-      generalOptions: {
-        showMissingPrimaryKeyWarning: false
-      },
-      filterOptions: {
-        useAdaptableBlotterFilterForm: false
-      }
-    };
-  }
+  ready(x: GridOptions) {}
 }
