@@ -1,0 +1,8 @@
+{
+  "/tms/*": {
+    "target": "http://slm-release.vermeg.com:46080",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true
+  }
+}
