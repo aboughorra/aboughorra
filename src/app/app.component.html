@@ -1,12 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<adaptableblotter-angular-aggrid [blotterOptions]="adaptableBlotterOptions" *ngIf="adaptableBlotterOptions" >
-</adaptableblotter-angular-aggrid>
-
-<ag-grid-angular
-style="width: 500px;height: 500px"
-  class="ag-theme-balham"
-  [rowData]="rowData"
-  [columnDefs]="columnDefs"
-  (gridReady)="ready($event)"
+<adaptableblotter-angular-aggrid
+  style="height:50vh"
+  [blotterOptions]="adaptableBlotterOptions"
+  [gridOptions]="gridOptions"
 >
-</ag-grid-angular>
+</adaptableblotter-angular-aggrid>
